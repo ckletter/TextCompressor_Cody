@@ -1,9 +1,9 @@
 Name: YOUR NAME HERE
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date    |    Time    |                                                                                                                                                                                                                                                                                                                                                                   Update |
+|:--------|:----------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| April 5 |   9-10pm   |                                                                                                                                                                                                                                                                                                                               I tried to write abstract, efficient code. |
+| Dec 2   | 9:30-10:00 | I spent this time discussing strategy with my groupmates, and we talked about an approach using a hashmap where we keep track of the occurences of certain sequences with a count in the map, then use codes to represent them and use an escape character to indicate whenever we use codes. Otherwise, we use 5-byte codes for each letter (i.e. in the letter state). |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
