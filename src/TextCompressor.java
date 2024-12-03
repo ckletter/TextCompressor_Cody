@@ -30,7 +30,21 @@
 public class TextCompressor {
 
     private static void compress() {
-
+        StringBuilder builtWindow = new StringBuilder();
+        for (int i = 0; i < 5; i++) {
+            builtWindow.append(BinaryStdIn.readChar());
+        }
+        String window = String.valueOf(builtWindow);
+        HashMap map = new HashMap();
+        while (!BinaryStdIn.isEmpty()) {
+            String windowThree = window.substring(0, 3);
+            map.add(windowThree);
+            String windowFour = window.substring(0, 4);
+            map.add(windowFour);
+            map.add(window);
+            // shift window by one
+            window = window.substring(1) + BinaryStdIn.readChar();
+        }
         // TODO: Complete the compress() method
 
         BinaryStdOut.close();
