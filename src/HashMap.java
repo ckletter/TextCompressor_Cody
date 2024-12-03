@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class HashMap {
     // Instance variables for default table size, table size, elements,
     // radix, load factor, parallel arrays for keys and values
@@ -39,7 +42,6 @@ public class HashMap {
      * If at hashed location, element already exists, keeps increasing index until empty space is reached
      * If by adding the element, we exceed our load factor, then we resize the hash map
      * @param key
-     * @param value
      */
     public void add(String key) {
         elements = elements + 1;
@@ -120,5 +122,11 @@ public class HashMap {
         this.keys = newKeys;
         this.values = newVals;
     }
-    public String[] 
+    public String[] getRepeats() {
+        ArrayList<String> keyList = new ArrayList<String>();
+        keyList = (ArrayList<String>) Arrays.asList(keys);
+        ArrayList<Integer> valList = new ArrayList<Integer>();
+        valList = (ArrayList<Integer>) Arrays.asList(keys);
+        list.removeIf(String::isEmpty);
+    }
 }
