@@ -21,6 +21,8 @@
  *  = 43.54% compression ratio!
  ******************************************************************************/
 
+import java.util.ArrayList;
+
 /**
  *  The {@code TextCompressor} class provides static methods for compressing
  *  and expanding natural language through textfile input.
@@ -28,7 +30,8 @@
  *  @author Zach Blick, YOUR NAME HERE
  */
 public class TextCompressor {
-
+    public static int SPECIAL = 1;
+    public static int REGULAR = 0;
     private static void compress() {
         String text = BinaryStdIn.readString();
         String window = text.substring(0, 5);
@@ -47,12 +50,29 @@ public class TextCompressor {
         // find most repeated tokens
         String[] repeats = map.getRepeats();
         String copy = text;
+        ArrayList[] indices = new ArrayList[256];
         // find locations of those repeats
         for (String repeat : repeats) {
             int index;
+            ArrayList<Integer> locations = new ArrayList<>();
             while ((index = copy.indexOf("repeat")) != -1) {
-                index
+                locations.add(index);
             }
+        }
+        int state = REGULAR;
+        int length = text.length();
+        // write to compressed file
+        for (int i = 0; i < length; i++) {
+            char character = text.charAt(i);
+            if (Character.isLetter(character)) {
+                BinaryStdOut.write(character, 5);
+            }
+            else {
+                if (state == REGULAR) {
+                    // write space
+                }
+            }
+            BinaryStdOut.write()
         }
 
         BinaryStdOut.close();
