@@ -123,10 +123,20 @@ public class HashMap {
         this.values = newVals;
     }
     public String[] getRepeats() {
-        ArrayList<String> keyList = new ArrayList<String>();
-        keyList = (ArrayList<String>) Arrays.asList(keys);
-        ArrayList<Integer> valList = new ArrayList<Integer>();
-        valList = (ArrayList<Integer>) Arrays.asList(keys);
-        list.removeIf(String::isEmpty);
+        ArrayList<Integer> repeatIndices = new ArrayList<Integer>();
+        repeatIndices.add(0);
+        int length = values.length;
+        int elementNum = 0;
+        // sort the first 256 elements
+        while (elementNum < 256) {
+            for (int element : repeatIndices) {
+                    int repeat = values[element];
+                    if (currRepeat < repeat) {
+
+                    }
+                }
+            }
+        }
+
     }
 }

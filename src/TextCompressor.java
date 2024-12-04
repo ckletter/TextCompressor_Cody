@@ -30,11 +30,9 @@
 public class TextCompressor {
 
     private static void compress() {
-        StringBuilder builtWindow = new StringBuilder();
-        for (int i = 0; i < 5; i++) {
-            builtWindow.append(BinaryStdIn.readChar());
-        }
-        String window = String.valueOf(builtWindow);
+        String text = BinaryStdIn.readString();
+        String window = text.substring(0, 5);
+        int currentIndex = 0;
         HashMap map = new HashMap();
         while (!BinaryStdIn.isEmpty()) {
             String windowThree = window.substring(0, 3);
@@ -43,9 +41,19 @@ public class TextCompressor {
             map.add(windowFour);
             map.add(window);
             // shift window by one
-            window = window.substring(1) + BinaryStdIn.readChar();
+            currentIndex += 5;
+            window = text.substring(currentIndex, currentIndex + 5);
         }
-        // TODO: Complete the compress() method
+        // find most repeated tokens
+        String[] repeats = map.getRepeats();
+        String copy = text;
+        // find locations of those repeats
+        for (String repeat : repeats) {
+            int index;
+            while ((index = copy.indexOf("repeat")) != -1) {
+                index
+            }
+        }
 
         BinaryStdOut.close();
     }
